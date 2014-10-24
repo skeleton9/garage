@@ -76,7 +76,7 @@ switch i {
     fmt.Println(i)
 }
 ```
-- Type Switch [:question:](http://golang.org/doc/effective_go.html#type_switch)
+- Type Switch [:link:](http://golang.org/doc/effective_go.html#type_switch)
 
 ```
 switch t := t.(type) {
