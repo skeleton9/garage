@@ -39,8 +39,8 @@ Do not compare two float point numbers to be equal.
 +, -, *, /, %
 
 ## Strings
-String literals can be created using double quotes `"Hello World"` or back ticks
-``` `Hello World` ```.
+`string` type is a sequence of characters. String literals can be created using
+double quotes `"Hello World"` or back ticks ``` `Hello World` ```.
 
 Here are some basic operations for strings:
 

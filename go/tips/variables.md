@@ -1,17 +1,8 @@
 # Go Variables
 
-### Variable Names in mixed caps
-
-Go is not using underscore in names. So for multiword names, use `MixedCaps` or
-`mixedCaps`.
-
-### Names in packages
-
-- Only names start with upper case is visible outside a package.
-- Once imported, package name becomes an accessor for its contents.
-  `import "bytes"`, and use `bytes.Buffer`.
-
 ### Variable declaration
+
+Variable is a storage with a name and a type.
 
 ```go
 var x int
@@ -20,12 +11,13 @@ var p *int
 var a [3]int
 f func(a, b int) int {}
 
+// define multiple variables
 var (
   Name string = "bob"
   Age int = 12
   )
 ```
-
+As declare and init with a value is quite common, GO provide simple way to do it.
 Use *Short assignment* like `a := 1` to declare a `var` with implicit type.
 It is only available inside function. Outside a function, every construct
 begins with a keyword (`var`, `func`, and so on)
@@ -47,6 +39,19 @@ func main() {
 }
 ```
 
+### Variable Names in mixed caps
+
+Go is not using underscore in names. So for multiword names, use `MixedCaps` or
+`mixedCaps`.
+
+### Names in packages
+
+- Only names start with upper case is visible outside a package.
+- Once imported, package name becomes an accessor for its contents.
+  `import "bytes"`, and use `bytes.Buffer`.
+
+
+
 ### Constants
 
 ```go
@@ -56,22 +61,15 @@ Constants can be character, string, boolean, or numeric values.
 
 You can not use *short assignment* for constants.
 
-### Basic Types
+### Note
+
+The Go compiler won't allow you to create variables that you never use.
+So you can use `_` for the temp variable that you won't use.
 
 ```go
-bool
-
-string
-
-int  int8  int16  int32  int64
-uint uint8 uint16 uint32 uint64 uintptr
-
-byte // alias for uint8
-
-rune // alias for int32
-     // represents a Unicode code point
-
-float32 float64
-
-complex64 complex128
+var x = int[4]{1, 2, 3, 4}
+var total int = 0
+for _, value := range x {
+    total += value
+}
 ```
